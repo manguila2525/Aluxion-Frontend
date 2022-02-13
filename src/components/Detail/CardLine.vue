@@ -1,13 +1,13 @@
 <template>
 
-  <div  class="cardLine" v-if="arrive.DistanceBus !== 0 || arrive.length !== 0">
+  <div  class="cardLine" v-if="arrive.DistanceBus !== 0 || arrive.length !== 0" >
    
     <div class="cardLine__lineDirection">
       <h2>{{arrive.line}}</h2>
     </div>
     <div class="cardLine__info">
+        <h2 class="cardLine__title" id="cardLine__title">{{arrive.destination}}</h2>
       <div class="cardLine__groupTitle">
-        <h2 class="cardLine__title">{{arrive.destination}}</h2>
         <!-- <h3 class="cardLine__subtitle">{{line.subname}}</h3> -->
       </div>
       <div class="cardLine__footer">
@@ -50,7 +50,7 @@ export default {
       // }
     }
   },
-}
+  }
 </script>
 
 <style>
@@ -64,6 +64,14 @@ export default {
     border-radius:4px;
     background: #1D3051;
     color: #fff;
+    cursor: pointer;
+  }
+  .cardLine:hover, .cardLine:active, .cardLine:focus{
+    background: #FFFFFF;
+    color: #091E42;
+  }
+  .cardLine:hover {
+    color: #091E42;
   }
   .cardLine__lineDirection{
     position: relative;
@@ -86,7 +94,6 @@ export default {
   .cardLine__title{
     font-size: 18px;
     line-height: 21px;
-    color: #FFFFFF;
   }
   .cardLine__subtitle{
     font-size: 13px;

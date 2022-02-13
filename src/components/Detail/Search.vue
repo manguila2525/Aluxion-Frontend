@@ -8,9 +8,13 @@
     </div>
     <div class="search__barra">
       <h1 class="search__title" v-for="(stop, index) in getStop" :key="index">{{stop.stopName}}</h1>
-      <div class="search__groupIcons">
-        <img class="search__icon--points btn__iconSearch" :src="iconPoints" alt="PointsIcon">
-        <img class="search__icon--points btn__iconSearch" :src="iconLineOff" alt="PointsIcon">
+      <div  v-if="!$store.state.switchLigth" class="search__groupIcons">
+        <img class="search__icon--points btn__iconSearch" :src="iconPoints" alt="PointsIcon" @click="this.$store.commit('cardGrip')">
+        <img class="search__icon--points btn__iconSearch" :src="iconLineOff" alt="PointsIcon" @click="this.$store.commit('cardLines')">
+      </div>
+      <div class="search__groupIcons" v-else>
+        <img  class="search__icon--points btn__iconSearch" :src="iconPointsOff" alt="PointsIcon" @click="this.$store.commit('cardGrip')">
+        <img class="search__icon--points btn__iconSearch" :src="iconLineOn" alt="PointsIcon" @click="this.$store.commit('cardLines')">
       </div>
     </div>
   </div>
@@ -20,19 +24,38 @@
 import {mapGetters} from 'vuex';
 import Arrow from '../../assets/Icons/Arrow.png';
 import Points from '../../assets/Icons/fourPoint.png';
+import PointsOff from '../../assets/Icons/fourPoint-Off.png';
 import LineOff from '../../assets/Icons/Lines-Off.png';
+import LineOn from '../../assets/Icons/Lines-On.png';
 export default {
   data() {
     return {
+      switchLigth:false,
       iconArrow: Arrow,
       iconPoints: Points,
-      iconLineOff: LineOff
+      iconPointsOff: PointsOff,
+      iconLineOff: LineOff,
+      iconLineOn: LineOn
     }
   },
   computed:{
     ...mapGetters([
       'getStop'
     ])
+  },
+  methods:{
+    // cardLines(){
+    //   const cardLine = document.querySelector('.cardLine__groupCards')
+    //   cardLine.style.display = 'flex'
+    //   cardLine.style.flexDirection = 'column'
+    //   this.switchLigth = false
+    //   // cardLine.style.marginBottom = '20px'
+    // },
+    // cardGrip(){
+    //    const cardLine = document.querySelector('.cardLine__groupCards')
+    //   cardLine.style.display = 'grid'
+    //    this.switchLigth = true
+    // }
   }
 }
 </script>
@@ -67,5 +90,10 @@ export default {
   }
   .btn__iconSearch{
     cursor: pointer;
+  }
+  @media (max-width: 528px) {
+    .search__groupIcons{
+      display: none;
+    }
   }
 </style>

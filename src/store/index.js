@@ -6,7 +6,9 @@ export default createStore({
     modal:false,
     arrive: null,
     stop: 70,
-    dataStop: null
+    dataStop: null,
+    switchLigth:false,
+    marginLine: false
   },
   mutations: {
     setModal(state, payload){
@@ -16,7 +18,34 @@ export default createStore({
     setStop(state, payload){
       state.stop = payload.StopInfo
       state.arrive = payload.Arrive
-      // console.log(state.stop)
+    },
+   cardLines(state){
+      const cardLine = document.querySelector('.cardLine__groupCards')
+      cardLine.style.display = 'flex'
+      cardLine.style.flexDirection = 'column'
+      state.switchLigth = true
+    },
+    cardGrip(state){
+      const cardLine = document.querySelector('.cardLine__groupCards')
+      cardLine.style.display = 'grid'
+      state.switchLigth = false
+    },
+    lineMargin(state){
+      const line = document.getElementsByClassName('detail__headerDesktop')[0]
+      const input = document.getElementById("search")
+      state.marginLine = true
+    console.log("white")
+      line.style.borderBottom = "solid 1px #fff"
+      input.value= ""
+      if(state.marginLine){
+      }
+    },
+    closeMargin(state){
+      const line = document.getElementsByClassName('detail__headerDesktop')[0]
+      const input = document.getElementById("search")
+      line.style.borderBottom = "transparent"
+      state.marginLine = false
+      console.log("transparente")
     }
   },
   getters:{

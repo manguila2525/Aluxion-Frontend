@@ -9,10 +9,9 @@
       </div>
     </div>
     <div>
-      <div class="cardLine__groupCards">
-       <center v-if="$store.state.arrive == null || $store.state.arrive.length == 0"> <div  class="spin"> </div></center>
+       <div class="center" v-if="$store.state.arrive == null || $store.state.arrive.length == 0"> <div  class="spin"> </div></div>
+      <div  v-else class="cardLine__groupCards">
         <CardLine 
-          v-else
           v-for="(arrive, index) in $store.state.arrive" 
           :key="index" 
           :arrive="arrive"
@@ -45,6 +44,13 @@ export default {
 </script>
 
 <style>
+.center{
+  width:100%;
+  height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .spin {
             border: 3px solid hsla(185, 100%, 62%, 0.2);
             border-top-color: #3cefff;
@@ -83,5 +89,19 @@ export default {
   }
   .line__groupCard{
     margin-bottom: 60px;
+    height:55vh;
+    overflow:auto;
   }
+   .line__groupCard::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.line__groupCard::-webkit-scrollbar:vertical {
+    width:1px;
+}
+@media (max-width:940px) {
+  .cardLine__groupCards{
+    grid-template-columns: repeat(auto-fill,minmax(15rem, 1fr));
+  }
+}
 </style>

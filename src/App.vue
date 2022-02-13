@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <div class="app" @click="closeMargin">
     <router-view/>
   </div>
 </template>

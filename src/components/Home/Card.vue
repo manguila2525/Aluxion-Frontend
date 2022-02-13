@@ -5,7 +5,7 @@
     @enter="enter">
    
  
-  <div class="alux" @click="modal = !modal">
+  <div class="alux" @click="viewModal">
     <div class="alux__img">
       <img :src="image" :alt="name"/>
     </div>
@@ -15,14 +15,14 @@
   </transition>
   <div v-if="modal" class="modal">
     <div class="modal__content">
-      <div class="btn__modal--cerrar" @click="viewModal">cerrar</div>
+      <div class="btn__modal--cerrar" @click="closeModal">cerrar</div>
       <div>
         <h1>Hey {{name}},</h1>
         <h1>¿Cuál es tu rumbo, aluxioner?</h1>
       </div>
       <div class="btn__group">
-        <router-link :to="{name: 'Detail', params: { id: houseId }}"><button class="btn" >Casa</button></router-link>
-        <router-link :to="{name: 'Detail', params: { id: aluxionId }}"><button class="btn" >Aluxion</button></router-link>
+        <router-link :to="{name: 'Detail', params: { id: houseId }}"><button class="btn"  @click="closeModal">Casa</button></router-link>
+        <router-link :to="{name: 'Detail', params: { id: aluxionId }}"><button class="btn"  @click="closeModal">Aluxion</button></router-link>
       </div>
     </div>
   </div>
@@ -42,6 +42,13 @@ export default {
  },
  methods: {
    viewModal(){
+     const todo = document.querySelector("body")
+     todo.style.overflow = "hidden"
+     this.modal = !this.modal
+   },
+   closeModal(){
+     const todo = document.querySelector("body")
+     todo.style.overflow = "auto"
      this.modal = !this.modal
    }
  },
@@ -67,7 +74,7 @@ export default {
 
 <style>
 .modal{
-    height: 131%;
+    /* height: 131%; */
     overflow: hidden;
     position: absolute;
     top: 0;
@@ -125,6 +132,10 @@ letter-spacing: 0.02em;
   .alux{
     margin-bottom: 20px;
     cursor: pointer;
+    transition:all 600ms ease
+  }
+  .alux:hover, .alux:active, .alux:focus{
+    transform:translateY(-20px) !important;
   }
  .alux__name{
     font-style: normal;

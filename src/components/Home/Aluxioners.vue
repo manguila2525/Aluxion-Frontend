@@ -84,6 +84,7 @@ export default {
     justify-content: space-evenly !important;
     flex-wrap: wrap;
   }
+  
  @media (max-width: 800px) {
     .aluxioners__group{
       justify-content: space-evenly;

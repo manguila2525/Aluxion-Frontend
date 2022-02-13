@@ -10,10 +10,11 @@
         type="search" 
         placeholder="¿Cuál es tu parada?"
         class="seccion1__input"
+        v-model="search"
         autocomplete="off"
         @click="handleClass"
         />
-        <img src="../../assets/Home/Vector.png" alt="lupa" >
+       <router-link :to="{name: 'Detail', params: { id: search }}"><img src="../../assets/Home/Vector.png" alt="lupa" ></router-link> 
   
     </label>
     <label for="search2" class="seccion1__groupInput--mobile">
@@ -21,9 +22,11 @@
       <input 
         id="search2"
         type="search" 
+        v-model="search"
+        @click="handleClass"
         class="seccion1__input--mobile"
         />
-      <img src="../../assets/Home/Vector.png" alt="lupa" for="search2" >
+     <router-link :to="{name: 'Detail', params: { id: search }}"><img src="../../assets/Home/Vector.png" alt="lupa" for="search2" ></router-link> 
   
     </label>
   </section>
@@ -33,10 +36,20 @@
 <script>
 
 export default {
+  data() {
+    return {
+      search: "¿Cuál es tu parada?"
+    }
+  },
   methods: {
     handleClass(){
       const line = document.getElementsByClassName('seccion1__groupInput')[0]
+      const input = document.getElementById("search")
       line.classList.add("line")
+      input.value= ""
+
+      const input2 = document.getElementById("search2")
+      input2.value= ""
       console.log(line);
     }
   }
