@@ -1,8 +1,9 @@
 <template>
   <nav>
     <div>
-      <h1 class="navbar__brand">        <img src="../../assets/Aluxioners/Aluxion-Web.png" alt="Logo Alux">
-</h1>
+      <h1 class="navbar__brand">
+        <img src="../../assets/Aluxioners/Aluxion-Web.png" alt="Logo Alux">
+      </h1>
     </div>
     <div class="navbar__group">
       <button @click="look" class="btn__nav" v-if="!show"><img src="../../assets/Icons/Burger.png" alt="Burger"> </button>
@@ -45,7 +46,7 @@ export default {
       show:false
     }
   },
-  methods: {
+  methods:{
     look(){
       const todo = document.querySelector("body")
       todo.style.overflow = "hidden" 
@@ -61,9 +62,9 @@ export default {
 </script>
 
 <style scoped>
-button{
-  display: none;
-}
+  button{
+    display: none;
+  }
   nav{
     display:flex;
     align-items: center;
@@ -97,7 +98,7 @@ button{
         justify-content: end;
       }
       ul{
-         width: 100%;
+        width: 100%;
         position: absolute;
         top: 70px;
         left: 0;
@@ -109,7 +110,7 @@ button{
         padding-top: 150px;
         gap: 44px;
         text-align: center;
-             font-size: 26px;
+        font-size: 26px;
         line-height: 31px;
       }
       .navbar__groupList{

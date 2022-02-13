@@ -1,14 +1,11 @@
 <template>
-
   <div  class="cardLine" v-if="arrive.DistanceBus !== 0 || arrive.length !== 0" >
-   
     <div class="cardLine__lineDirection">
       <h2>{{arrive.line}}</h2>
     </div>
     <div class="cardLine__info">
-        <h2 class="cardLine__title" id="cardLine__title">{{arrive.destination}}</h2>
+      <h2 class="cardLine__title" id="cardLine__title">{{arrive.destination}}</h2>
       <div class="cardLine__groupTitle">
-        <!-- <h3 class="cardLine__subtitle">{{line.subname}}</h3> -->
       </div>
       <div class="cardLine__footer">
         <div class="cardLine__groupTime">
@@ -43,11 +40,7 @@ export default {
       icons:{
         clock: Clock,
         distance:Distance
-      },
-      // stop: {
-      //   code: this.$store.state.stop.code,
-      //   data: this.$store.state.stop.data
-      // }
+      }
     }
   },
   }
@@ -57,9 +50,6 @@ export default {
   .cardLine{
     flex-grow: 1;
     display: flex;
-    /* width:305px;
-    min-width: 305px;
-    max-width:305px; */
     height:106px;
     border-radius:4px;
     background: #1D3051;

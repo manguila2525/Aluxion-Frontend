@@ -43,20 +43,6 @@ export default {
       'getStop'
     ])
   },
-  methods:{
-    // cardLines(){
-    //   const cardLine = document.querySelector('.cardLine__groupCards')
-    //   cardLine.style.display = 'flex'
-    //   cardLine.style.flexDirection = 'column'
-    //   this.switchLigth = false
-    //   // cardLine.style.marginBottom = '20px'
-    // },
-    // cardGrip(){
-    //    const cardLine = document.querySelector('.cardLine__groupCards')
-    //   cardLine.style.display = 'grid'
-    //    this.switchLigth = true
-    // }
-  }
 }
 </script>
 

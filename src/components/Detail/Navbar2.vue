@@ -1,8 +1,9 @@
 <template>
   <nav>
     <div>
-      <h1 class="navbar__brand">        <img src="../../assets/Aluxioners/Aluxion-Web.png" alt="Logo Alux">
-</h1>
+      <h1 class="navbar__brand">
+        <img src="../../assets/Aluxioners/Aluxion-Web.png" alt="Logo Alux">
+      </h1>
     </div>
     <div class="navbar__group">
       <button @click="look" class="btn__nav" v-if="!show"><img src="../../assets/Icons/Burger.png" alt="Burger"> </button>
@@ -20,21 +21,17 @@
           </li>
         </ul>
       </div>
-
       <label for="search" class="detail__headerDesktop">
-    
-          <input 
-            @click="handleClass"
-            v-model="search"
-            id="search"
-            type="search" 
-            placeholder="¿Cuál es tu parada?"
-            class="seccion1__input"
-            />
-          <router-link :to="{name: 'Detail', params: { id: search }}"><img src="../../assets/Home/Vector.png" alt="lupa" ></router-link> 
-      
-        </label>
-
+        <input 
+          @click="handleClass"
+          v-model="search"
+          id="search"
+          type="search" 
+          placeholder="¿Cuál es tu parada?"
+          class="seccion1__input"
+        />
+        <router-link :to="{name: 'Detail', params: { id: search }}"><img src="../../assets/Home/Vector.png" alt="lupa" ></router-link> 
+      </label>
     </div>
   </nav>
 </template>
@@ -48,7 +45,6 @@ export default {
       search: "¿Cuál es tu parada?"
     }
   },
-
  methods: {
     look(){
       const todo = document.querySelector(".about")
@@ -67,14 +63,13 @@ export default {
       input.value= ""
     }
   },
-  
 }
 </script>
 
 <style scoped>
-button{
-  display: none;
-}
+  button{
+    display: none;
+  }
   nav{
     display:flex;
     align-items: center;
@@ -140,5 +135,5 @@ button{
       .detail__headerDesktop{
     display:none;
   }
-    }
+}
 </style>

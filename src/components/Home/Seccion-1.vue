@@ -4,7 +4,6 @@
       <h1 class="seccion1__title">Don’t be late, aluxioner</h1>
     </div>
     <label  for="search" class="seccion1__groupInput">
-   
       <input 
         id="search"
         type="search" 
@@ -15,10 +14,8 @@
         @click="handleClass"
         />
        <router-link :to="{name: 'Detail', params: { id: search }}"><img src="../../assets/Home/Vector.png" alt="lupa" ></router-link> 
-  
     </label>
     <label for="search2" class="seccion1__groupInput--mobile">
-   
       <input 
         id="search2"
         type="search" 
@@ -27,10 +24,8 @@
         class="seccion1__input--mobile"
         />
      <router-link :to="{name: 'Detail', params: { id: search }}"><img src="../../assets/Home/Vector.png" alt="lupa" for="search2" ></router-link> 
-  
     </label>
   </section>
-
 </template>
 
 <script>
@@ -47,7 +42,6 @@ export default {
       const input = document.getElementById("search")
       line.classList.add("line")
       input.value= ""
-
       const input2 = document.getElementById("search2")
       input2.value= ""
       console.log(line);
@@ -57,20 +51,15 @@ export default {
 </script>
 
 <style>
-.line{
-  border-color: red blue green;
-  border-bottom: 1px solid ;
-   animation: raya 1s linear infinite;
-}
-@keyframes raya {
-  
-}
-    .seccion1{
-      display:flex;
-      align-items: center;
-      height:445px;
-      justify-content: space-between;
-    }
+  .line{
+    border-bottom: 1px solid;
+  }
+  .seccion1{
+    display:flex;
+    align-items: center;
+    height:445px;
+    justify-content: space-between;
+  }
   .seccion1__title{
     font-size:92px;
     font-weight: bold;
@@ -81,14 +70,12 @@ export default {
   .seccion1__groupTitle{
     flex-grow: 1;
     max-width: 738px;
-   
   }
   .seccion1__groupInput{
     display: flex;
     flex-grow: 1;
     align-items: flex-end;
     justify-content: space-between;
-    /* border-bottom: solid 1px transparent; */
     padding-bottom: 7.47px;
     padding-right: 7px;
     height: 35%;
@@ -110,11 +97,9 @@ export default {
   .seccion1__input:active, .seccion1__input:focus {
     color:#fbfbfb;
   }
-    .seccion1__input::placeholder{
-      color:#444343;
-    }
-
-
+  .seccion1__input::placeholder{
+    color:#444343;
+  }
    @media (max-width: 645px)  {
      .seccion1{
         align-items: end;
@@ -144,7 +129,6 @@ export default {
         outline:none;
         border: none;
         color:#fff;
-        /* border-bottom: 1px solid #ccc; */
         background:transparent;
       }
     }

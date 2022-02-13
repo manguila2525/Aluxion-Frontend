@@ -84,11 +84,10 @@ export default {
     justify-content: space-evenly !important;
     flex-wrap: wrap;
   }
-  
- @media (max-width: 800px) {
-    .aluxioners__group{
-      justify-content: space-evenly;
-    }
+  @media (max-width: 800px) {
+      .aluxioners__group{
+        justify-content: space-evenly;
+      }
   }
    @media (max-width: 640px) {
     .aluxioners__group{
@@ -97,11 +96,10 @@ export default {
       overflow: auto;
     }
     .aluxioners__group::-webkit-scrollbar {
-    -webkit-appearance: none;
-}
-
-.aluxioners__group::-webkit-scrollbar:vertical {
-    width:10px;
-}
+      -webkit-appearance: none;
+    }
+    .aluxioners__group::-webkit-scrollbar:vertical {
+      width:10px;
+    }
   }
 </style>
